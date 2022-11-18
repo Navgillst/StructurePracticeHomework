@@ -51,103 +51,55 @@ public class RegistrationPage extends Utils
 
     }
 
-    //clicking on female radio button
-    public void verifyUserIsAbleToClickOnFemaleButton()
+    public void register()
     {
-
+        //clicking on female radio button
         clickOnElement(_femaleRadioButton);
-    }
 
-    //inputting firstname
-    public void verifyUserIsAbleToInputFirstName()
-    {
-    typeText(_firstName,"Navpreet");
+        //inputting firstname
+        typeText(_firstName,"Navpreet");
 
-    }
 
-    //inputting last name
-    public void verifyUserIsAbleToInputLastName()
-    {
+        //inputting last name
+        typeText(_lastName,"Gill");
 
-    typeText(_lastName,"Gill");
 
-    }
-
-    //selecting day of the date of birth
-    public void verifyUserIsAbleToSelectDate()
-    {
-
+        //selecting day of the date of birth
         selectFromDropDownByIndex(_day,5);
 
-    }
 
-    //selecting month of the date of birth
-    public void verifyUserIsAbleToSelectMonth()
-    {
+        //selecting month of the date of birth
         selectFromDropDownByValue( _month,"3");
 
-    }
 
-    //selecting year of the date of birth
-    public void verifyUserIsAbleToSelectYear()
-    {
+        //selecting year of the date of birth
+
         selectFromDropDownByIndex(_year,9);
 
-    }
 
-    //inputting email address
-    public void verifyUserIsAbleToTypeEmailAddress()
-    {
+        //inputting email address
         typeText(_email,"navgillst"+getTimeStamp()+"@gmail.com");
 
-    }
 
-
-    //inputting company name
-    public void verifyUserIsAbleToTypeCompanyName()
-    {
+        //inputting company name
         typeText(_companyName ,"XYZ Enterprise");
 
-    }
 
-    //clicking on newsletter checkbox to un tick
-    public void verifyUserIsAbleToTickNewsletterOnCheckBox()
-    {
+        //clicking on newsletter checkbox to un tick
         clickOnElement(_newsletter);
 
-    }
 
-    //inputting password
-    public void verifyUserIsAbleToTypePassword()
-    {
+        //inputting password
         typeText(_password,"Test1234");
 
-    }
 
-    //inputting password again to confirm
-    public void verifyUserIsAbleToReTypePassword()
-    {
+        //inputting password again to confirm
         typeText(_confirmPassword,"Test1234");
 
-    }
 
-    //clicking on register button
-    public void verifyUserIsAbleToClickOnRegisterButton()
-    {
+        //clicking on register button
         clickOnElement(_register);
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
