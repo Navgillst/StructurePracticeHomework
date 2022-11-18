@@ -17,7 +17,6 @@ public class TestSuit extends BaseTest
 
         //Methods from RegistrationPage class are being called with its object
         registrationPage.verifyUserIsOnRegisterPage();
-
         registrationPage.register();
 
 
