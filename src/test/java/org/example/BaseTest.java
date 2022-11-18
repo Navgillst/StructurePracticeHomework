@@ -22,7 +22,6 @@ public class BaseTest extends Utils
     RegisterResultPage registerResultPage = new RegisterResultPage();
 
 
-
     //Before Method Annotation will execute this method before executing any other method
     @BeforeMethod
     public void setUp()
@@ -31,6 +30,7 @@ public class BaseTest extends Utils
         driverManager. openBrowser();
 
     }
+
     //AfterMethod Annotation will execute this method after executing any other method
     @AfterMethod
     public void tearDown()

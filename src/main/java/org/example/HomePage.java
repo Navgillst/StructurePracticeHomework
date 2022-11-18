@@ -24,7 +24,9 @@ public class HomePage extends Utils
 
     //clicking on register button on homepage
     public void clickOnRegisterButton()
+
     {
         clickOnElement(_registrationButton);
     }
+
 }
