@@ -3,6 +3,8 @@ package org.example;
 //importing org.openqa.selenium.chrome.ChromeDriver package
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.Set;
+
 
 //DriverManager class inheriting the properties of Utils class
 public class DriverManager extends Utils
@@ -19,7 +21,6 @@ public class DriverManager extends Utils
         //Navigating to demo.nopcommerce.com website with get() method through the object driver
         driver. get("https://demo.nopcommerce.com/");
 
-
     }
 
     //To close browser
@@ -27,7 +28,7 @@ public class DriverManager extends Utils
 
     {
        //To close browser
-        driver.quit();
+        //driver.quit();
     }
 
 

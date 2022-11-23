@@ -1,8 +1,12 @@
 package org.example;
 
 //Importing org.openqa.selenium.By package
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 //Importing org.openqa.selenium.support.ui.ExpectedConditions package
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 //Importing org.openqa.selenium.support.ui.Select package
 import org.openqa.selenium.support.ui.Select;
@@ -10,6 +14,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 //Importing java.text.SimpleDateFormat package
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 //Importing java.time.Duration package
 import java.time.Duration;
@@ -74,6 +80,8 @@ public class Utils extends BasePage
 
     }
 
+
+
     //Reusable method selectFromDropDownByVisibleText() for select the element by its visible text
     public static void selectFromDropDownByVisibleText(By by, String txt)
     {
@@ -101,5 +109,19 @@ public class Utils extends BasePage
         Select selectIndex = new Select(driver.findElement(by));
         // To select year using selectByIndex function
         selectIndex.selectByIndex(index);
+    }
+
+    public static void captureScreenShot(String screenshotSource)
+    {
+        TakesScreenshot screenshot = ((TakesScreenshot) driver);
+        File SrcFile=screenshot.getScreenshotAs(OutputType.FILE);
+        File DestFile=new File("src/ScreenShots/"+screenshotSource+getTimeStamp()+".jpg");
+        try {
+            FileUtils.copyFile(SrcFile, DestFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 }

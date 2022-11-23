@@ -11,6 +11,9 @@ public class RegisterResultPage extends Utils
     //locator of text message after registration
     private By _registrationResultText = By.className("result");
 
+    //locator of continue button
+    private  By _continue = By.xpath("//a[@class=\"button-1 register-continue-button\"]");
+
     //storing the expected string value to variable expectedRegistrationText
     static String expectedRegistrationText  = "Your registration completed";
 
@@ -27,5 +30,11 @@ public class RegisterResultPage extends Utils
        //verifying register message is as expected
        Assert.assertEquals(registerResulMessage , expectedRegistrationText);
 
+    }
+
+    public void clickOnContinue()
+    {
+        //clicking on continue button
+        clickOnElement(_continue);
     }
 }

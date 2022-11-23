@@ -1,8 +1,13 @@
 package org.example;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+//RegistrationPage class inheriting the properties of Utils class
 public class RegistrationPage extends Utils
 {
     //Female radio button locator
@@ -99,6 +104,8 @@ public class RegistrationPage extends Utils
 
         //clicking on register button
         clickOnElement(_register);
+
+
 
     }
 
