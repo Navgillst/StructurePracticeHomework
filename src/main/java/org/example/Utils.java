@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 //Importing org.openqa.selenium.support.ui.WebDriverWait package
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 //Importing java.text.SimpleDateFormat package
 import java.io.File;
@@ -123,5 +124,8 @@ public class Utils extends BasePage
         }
 
 
+    }
+    public static void assertCurrentURL(String categoryName){
+        Assert.assertTrue(driver.getCurrentUrl().contains(categoryName));
     }
 }

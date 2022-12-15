@@ -18,6 +18,7 @@ public class TestSuit extends BaseTest
         //Methods from RegistrationPage class are being called with its object
         registrationPage.verifyUserIsOnRegisterPage();
         registrationPage.register();
+        registrationPage.clickOnRegisterSubmit();
 
 
         //Method from RegisterResultPage class are being called with its object
@@ -32,10 +33,11 @@ public class TestSuit extends BaseTest
         homepage.navigateToElectronics();
         electronicsPage.navigateToCameraAndPhoto();
         cameraAndPhotoPage.productNames();
+        //cameraAndPhotoPage.addToCart();
+        cameraAndPhotoPage.addTocartButtoncheck();
+
 
     }
-
-
 
     //Test annotation to run test with using main method
     @Test
@@ -97,6 +99,19 @@ public class TestSuit extends BaseTest
 
         productEmailAFriend.verifyEmailMessage();
 
+    }
+
+    @Test
+    public void hoverFunctionality()
+    {
+        homepage.hoverActionComputer();
+    }
+
+    @Test
+    public void searchFunctionality()
+    {
+        homepage.searchBar();
+        nikePage.verifySearchFunctionality();
     }
 
 

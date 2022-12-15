@@ -40,6 +40,9 @@ public class BaseTest extends Utils
     //Creating object of ProductEmailAFriend
     ProductEmailAFriend productEmailAFriend = new ProductEmailAFriend();
 
+    //Creating the object of NikePage
+    NikePage nikePage = new NikePage();
+
 
     //Before Method Annotation will execute this method before executing any other method
     @BeforeMethod
