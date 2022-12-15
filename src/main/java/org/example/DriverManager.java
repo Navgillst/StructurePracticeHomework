@@ -114,7 +114,7 @@ public class DriverManager extends Utils
 
     {
        //To close browser
-       // driver.quit();
+        driver.quit();
     }
 
 
