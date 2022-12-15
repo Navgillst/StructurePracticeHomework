@@ -22,13 +22,13 @@ public class AppleMacBookProPage extends Utils
         clickOnElement(_emailAFriendButton);
 
         //Navigates to 'friend email' field with its locator by id using user defined method 'enterText' and adding friends email id
-        typeText(_friendsEmail,"abc@gmail.com");
+        typeText(_friendsEmail,LoadProp.getProperty("friendsEmail"));
 
         //Navigates to 'your email address' field with its locator by id using user defined method 'enterText' and adding my email id
         //typeText(By.id("YourEmailAddress"),"navgillst@gmail.com");
 
         //Navigates to 'personal message' field with its locator by id using user defined method 'enterText' and adding message
-        typeText(_personalMessage,"Hi, Check this out . It is really a good product");
+        typeText(_personalMessage,LoadProp.getProperty("personalMessage"));
 
         //Navigates to the send mail with its locator by classname clicking on the button 'send mail'
         clickOnElement(_sendMail);

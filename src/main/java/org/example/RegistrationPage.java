@@ -62,11 +62,11 @@ public class RegistrationPage extends Utils
         clickOnElement(_femaleRadioButton);
 
         //inputting firstname
-        typeText(_firstName,"Navpreet");
+        typeText(_firstName,LoadProp.getProperty("firstname"));
 
 
         //inputting last name
-        typeText(_lastName,"Gill");
+        typeText(_lastName,LoadProp.getProperty("lastname"));
 
 
         //selecting day of the date of birth
@@ -86,8 +86,9 @@ public class RegistrationPage extends Utils
         typeText(_email,"navgillst"+getTimeStamp()+"@gmail.com");
 
 
+
         //inputting company name
-        typeText(_companyName ,"XYZ Enterprise");
+        typeText(_companyName ,LoadProp.getProperty("companyName"));
 
 
         //clicking on newsletter checkbox to un tick
@@ -95,18 +96,22 @@ public class RegistrationPage extends Utils
 
 
         //inputting password
-        typeText(_password,"Test1234");
+        typeText(_password,LoadProp.getProperty("password"));
 
 
         //inputting password again to confirm
-        typeText(_confirmPassword,"Test1234");
+        typeText(_confirmPassword,LoadProp.getProperty("confirmPassword"));
 
 
+
+
+
+
+    }
+    public void clickOnRegisterSubmit()
+    {
         //clicking on register button
         clickOnElement(_register);
-
-
-
     }
 
 }

@@ -27,7 +27,7 @@ public class NewReleaseCommentPage extends Utils
     public void addComment()
     {
         //Navigates to 'Title' field with its locator by id using user defined method 'enterText' and adding Title
-        typeText(_commentTitle,"Computer Review26");
+        typeText(_commentTitle,"Computer Review "+getTimeStamp());
 
         //Navigates to 'Comment' field with its locator by id using user defined method 'enterText' and adding Comment
         typeText(_writeComment,"It is working really well");
@@ -49,6 +49,9 @@ public class NewReleaseCommentPage extends Utils
 
         //printing the value of the variable commentMsg
         System.out.println(actualCommentMsg);
+
+
+
     }
 
 

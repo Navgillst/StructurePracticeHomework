@@ -6,12 +6,15 @@ import org.openqa.selenium.By;
 //importing org.testng.Assert package
 import org.openqa.selenium.WebElement;
 //importing org.openqa.selenium.support.ui.ExpectedConditions package
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //importing org.testng.Assert package
 import org.testng.Assert;
 //importing java.time.Duration package
+import javax.swing.*;
 import java.time.Duration;
 //importing java.util.List package
 import java.util.List;
@@ -41,11 +44,13 @@ public class HomePage extends Utils
     //Apple mac-book pro picture locator
     private By _appleMacBookPro = By.xpath("//img[@alt=\"Picture of Apple MacBook Pro 13-inch\"]");
 
+    private By _computerCategory =By.xpath("//ul[@class=\"top-menu notmobile\"]/li/a[@href=\"/computers\"]");
+
 
     public void verifyRegisterButtonIsPresent()
     {
         //driver is waiting for URL
-        waitForUrlTOBe("https://demo.nopcommerce.com/", 10);
+       waitForUrlTOBe(LoadProp.getProperty("url"),20);
 
         //verifying Register Button Is Present
         Assert.assertEquals(getTextFromElement(_registrationButton), "Register", "Register Button is not present");
@@ -144,6 +149,34 @@ public class HomePage extends Utils
     {
         //Navigates to the 'picture of Apple Macbook' page by clicking on picture
         clickOnElement(_appleMacBookPro);
+    }
+
+
+    public void hoverActionComputer()
+    {
+        WebElement computerCategory = driver.findElement(By.xpath("//ul[contains(@class,'notmobile')]//a[contains(@href,'computers')]"));
+        String beforeHover = computerCategory.getCssValue("color");
+        System.out.println("Before Hover Color =  "+beforeHover);
+
+        Actions action = new Actions(driver);
+        Action hoverOnComputers = action.moveToElement(computerCategory).build();
+        hoverOnComputers.perform();
+        String afterHover = computerCategory.getCssValue("color");
+        System.out.println("After Hover Color = "+afterHover);
+
+
+
+    }
+
+    public void searchBar()
+    {
+        driver.findElement(By.id("small-searchterms")).sendKeys("Nike");
+
+        clickOnElement(By.xpath("//form[@method=\"get\"]/button[@type=\"submit\"]"));
+
+    }
+    public void ckickOnCategoryPage(String category){
+        clickOnElement(By.linkText(category));
     }
 
 }
